@@ -22,7 +22,21 @@ public:
 		std::cout << std::endl;
 	}
 	
-	void set(int, int)
+	void set(int a, int b) {
+		if (a < 0 || a >= size)
+			std::cout << "Vihod za predel massiva" << std::endl;
+		else if (b < -100 || b > 100)
+			std::cout << "Vihod za predel dopustimih znachenii" << std::endl;
+		else arr[a] = b;
+	}
+	
+	void get(int a) {
+		if (a < 0 || a >= size) {
+			std::cout << "Vihod za predel massiva" << std::endl;
+			return -1;
+		}
+		else return arr[a];
+	}
 };
 
 
