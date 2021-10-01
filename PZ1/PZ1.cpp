@@ -1,6 +1,6 @@
 #include <iostream>
 
-class GoodClass {
+class Array {
 	
 private:
 	int size;
@@ -36,6 +36,29 @@ public:
 			return -1;
 		}
 		else return arr[a];
+	}
+	
+	void add(int a) {
+		if (a >= -100 || a <= 100) {
+			size = size + 1;
+			arr[size] = a;
+		}
+		else
+			std::cout << "Vihod za predel dopustimih znachenii" << std::endl;
+	}
+	
+	void addition() {
+		int a = 0;
+		for (int i=0; i<=size; i++)
+			a = a + arr[i];
+		std::cout << "Sum = " << a << std::endl;
+	}
+	
+	void subtraction() {
+		int a = 0;
+		for (int i=0; i<=size; i++)
+			a = a - arr[i];
+		std::cout << "Dif = " << a << std::endl;
 	}
 };
 
