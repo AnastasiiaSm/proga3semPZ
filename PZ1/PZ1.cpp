@@ -40,7 +40,10 @@ public:
 	
 	void add(int a) {
 		if (a >= -100 || a <= 100) {
-			int *arr1 = (int*)malloc((size+1)*sizeof(int));
+			int *arr1;
+			int size1 = size + 1;
+			this -> size1 = size1;
+			arr1 = new int[size1];
 			for (int i = 0; i < size; i++)
 				arr1[i] = arr[i];
 			arr[size] = a;
