@@ -7,12 +7,12 @@ private:
 	int* arr;
 	
 public:
-	GoodClass(int size) {
+	Array(int size) {
 		this->size = size;
 		arr = new int[size];
 	};
 	
-	~GoodClass() {
+	~Array() {
 		delete[] arr;
 	};
 	
@@ -40,8 +40,13 @@ public:
 	
 	void add(int a) {
 		if (a >= -100 || a <= 100) {
-			size = size + 1;
+			int *arr1 = (int*)malloc((size+1)*sizeof(int));
+			for (int i = 0; i < size; i++)
+				arr1[i] = arr[i];
 			arr[size] = a;
+			free(arr):
+			arr = arr1;
+			size = size + 1;
 		}
 		else
 			std::cout << "Vihod za predel dopustimih znachenii" << std::endl;
