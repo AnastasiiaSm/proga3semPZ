@@ -46,7 +46,7 @@ public:
 			arr1 = new int[size1];
 			for (int i = 0; i < size; i++)
 				arr1[i] = arr[i];
-			arr[size] = a;
+			arr1[size] = a;
 			free(arr):
 			arr = arr1;
 			size = size + 1;
