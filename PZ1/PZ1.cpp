@@ -55,18 +55,14 @@ public:
 			std::cout << "Vihod za predel dopustimih znachenii" << std::endl;
 	}
 	
-	void addition() {
-		int a = 0;
+	void pls(Massive &second) {
 		for (int i=0; i<=size; i++)
-			a = a + arr[i];
-		std::cout << "Sum = " << a << std::endl;
+			arr[i] = arr[i] + second.arr[i];
 	}
 	
-	void subtraction() {
-		int a = 0;
+	void min(Massive &second) {
 		for (int i=0; i<=size; i++)
-			a = a - arr[i];
-		std::cout << "Dif = " << a << std::endl;
+			arr[i] = arr[i] - second.arr[i];
 	}
 };
 
