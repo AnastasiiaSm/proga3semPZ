@@ -55,12 +55,12 @@ public:
 			std::cout << "Vihod za predel dopustimih znachenii" << std::endl;
 	}
 	
-	void pls(Massive &second) {
+	void pls(Array &second) {
 		for (int i=0; i<=size; i++)
 			arr[i] = arr[i] + second.arr[i];
 	}
 	
-	void min(Massive &second) {
+	void min(Array &second) {
 		for (int i=0; i<=size; i++)
 			arr[i] = arr[i] - second.arr[i];
 	}
