@@ -60,7 +60,7 @@ public:
 			arr[i] = arr[i] + second.arr[i];
 	}
 	
-	void min(Array &second) {
+	void mns(Array &second) {
 		for (int i=0; i<=size; i++)
 			arr[i] = arr[i] - second.arr[i];
 	}
