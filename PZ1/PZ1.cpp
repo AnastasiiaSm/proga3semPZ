@@ -39,7 +39,7 @@ public:
 	}
 	
 	void add(int a) {
-		if (a >= -100 || a <= 100) {
+		if (a >= -100 & a <= 100) {
 			int *arr1;
 			int size1 = size + 1;
 			this -> size1 = size1;
