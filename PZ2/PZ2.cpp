@@ -33,10 +33,8 @@ public:
 	}
 	
 	void get(int a) {
-		if (a < 0 || a >= size) {
+		if (a < 0 || a >= size)
 			throw std:out_of_range("");
-			return -1;
-		}
 		else return arr[a];
 	}
 	
