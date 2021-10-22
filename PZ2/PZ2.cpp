@@ -24,6 +24,12 @@ public:
 		std::cout << std::endl;
 	}
 	
+	void set(int a, T b) {
+		if (a < 0 || a >= size)
+			throw std:out_of_range("")
+		else arr[a] = b;
+	}
+	
 	void set(int a, int b) {
 		if (a < 0 || a >= size)
 			throw std:out_of_range("");
@@ -32,7 +38,7 @@ public:
 		else arr[a] = b;
 	}
 	
-	void get(int a) {
+	T get(int a) {
 		if (a < 0 || a >= size)
 			throw std:out_of_range("");
 		else return arr[a];
@@ -81,14 +87,12 @@ public:
 		return out;
 	}
 	
-	float dist (Array& c) {
-	Array<T> c1(c.l);
-	c1 = this->minus(c);
-	float j = 0;
-	for (int i = 0; i < l; i++)
-		j = j + c1.arr[i] * c1.arr[i];
-	j = sqrt(j);
-	return j;
+	double dist (Array& c) {
+		int d = 0;
+		for (int i = 0; i< size; i++)
+			d = d + (arr[i] - c.arr[i]) * (arr[i] - c.arr[i]);
+		d = sqrt(d);
+		return d;
 	}
 	
 };
