@@ -30,8 +30,8 @@ public:
 		if (a < 0 || a >= size)
 			throw std:out_of_range("")
 		else if (b < -100 || b > 100)
-				throw std:invalid_argument("")
-			else arr[a] = b;
+			throw std:invalid_argument("")
+		else arr[a] = b;
 	}
 	
 	T get(int a) {
