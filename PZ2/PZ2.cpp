@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <typeinfo>
 
 template <class T>
 class Array {
@@ -25,17 +26,12 @@ public:
 	}
 	
 	void set(int a, T b) {
+		typeid(T) == typeid(int);
 		if (a < 0 || a >= size)
 			throw std:out_of_range("")
-		else arr[a] = b;
-	}
-	
-	void set(int a, int b) {
-		if (a < 0 || a >= size)
-			throw std:out_of_range("");
 		else if (b < -100 || b > 100)
-			throw std:invalid_argument("");
-		else arr[a] = b;
+				throw std:invalid_argument("")
+			else arr[a] = b;
 	}
 	
 	T get(int a) {
@@ -73,6 +69,7 @@ public:
 	
 	Array<T>& operator =(const Array<T>& a) {
 		l = a.l;
+		delete[] arr;
 	    arr = new T[l];
 		for (int i = 0; i < l; i++)
 			arr[i] = a.arr[i];
