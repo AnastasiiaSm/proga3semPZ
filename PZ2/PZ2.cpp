@@ -8,6 +8,7 @@ class Array {
 private:
 	int size;
 	T* arr;
+	int a = 0;
 	
 public:
 	Array(int size) {
@@ -26,13 +27,18 @@ public:
 	}
 	
 	void set(int a, T b) {
-		if (typeid(T) == typeid(int))
+		if (typeid(T) == typeid(int)) {
+			a = 1;
 			if (a < 0 || a >= size)
 				throw std:out_of_range("")
 			else if (b < -100 || b > 100)
 				throw std:invalid_argument("")
-			else arr[a] = b
-		else throw std::logic_error;
+			else arr[a] = b;
+		}
+		else 
+			if (a < 0 || a >= size)
+				throw std:out_of_range("")
+			else arr[a] = b;
 	}
 	
 	T get(int a) {
@@ -88,11 +94,14 @@ public:
 	}
 	
 	double dist (Array& c) {
-		int d = 0;
-		for (int i = 0; i< size; i++)
-			d = d + (arr[i] - c.arr[i]) * (arr[i] - c.arr[i]);
-		d = sqrt(d);
-		return d;
+		if (a == 1) {
+			int d = 0;
+			for (int i = 0; i < size; i++)
+				d = d + (arr[i] - c.arr[i]) * (arr[i] - c.arr[i]);
+			d = sqrt(d);
+			return d;
+		}
+		else throw std::logic_error;
 	}
 	
 };
