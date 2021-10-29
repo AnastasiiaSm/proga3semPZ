@@ -26,12 +26,13 @@ public:
 	}
 	
 	void set(int a, T b) {
-		typeid(T) == typeid(int);
-		if (a < 0 || a >= size)
-			throw std:out_of_range("")
-		else if (b < -100 || b > 100)
-			throw std:invalid_argument("")
-		else arr[a] = b;
+		if (typeid(T) == typeid(int))
+			if (a < 0 || a >= size)
+				throw std:out_of_range("")
+			else if (b < -100 || b > 100)
+				throw std:invalid_argument("")
+			else arr[a] = b
+		else throw std::logic_error;
 	}
 	
 	T get(int a) {
@@ -40,21 +41,23 @@ public:
 		else return arr[a];
 	}
 	
-	void add(int a) {
-		if (a >= -100 || a <= 100) {
-			T *arr1;
-			int size1 = size + 1;
-			this -> size1 = size1;
-			arr1 = new int[size1];
-			for (int i = 0; i < size; i++)
-				arr1[i] = arr[i];
-			arr1[size] = a;
-			free(arr):
-			arr = arr1;
-			size = size + 1;
-		}
-		else
-			throw std:invalid_argument("");
+	void add(T a) {
+		if (typeid(T) == typeid(int))
+			if (a >= -100 || a <= 100) {
+				T *arr1;
+				int size1 = size + 1;
+				this -> size1 = size1;
+				arr1 = new int[size1];
+				for (int i = 0; i < size; i++)
+					arr1[i] = arr[i];
+				arr1[size] = a;
+				free(arr):
+				arr = arr1;
+				size = size + 1;
+			}
+			else
+				throw std:invalid_argument("")
+		else return arr[a];
 	}
 	
 	void pls(T &second) {
